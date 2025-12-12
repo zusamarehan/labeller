@@ -1,2 +1,7 @@
 fastapi
 uvicorn[standard]
+torch
+torchvision
+Pillow
+matplotlib
+sam3 @ git+https://github.com/facebookresearch/sam3.git
