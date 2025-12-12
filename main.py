@@ -3,14 +3,13 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-class ImageRequest(BaseModel):
-    url: str
-    format: str
+class InputModel(BaseModel):
+    param1: str
+    param2: str
 
-@app.post("/process")
-def process_image(request: ImageRequest):
-    # You can do logic here
-    # Example: print(request.url, request.format)
-
-    return {"success": True}
-
+@app.post("/echo")
+def echo_data(data: InputModel):
+    return {
+        "param1": data.param1,
+        "param2": data.param2
+    }
